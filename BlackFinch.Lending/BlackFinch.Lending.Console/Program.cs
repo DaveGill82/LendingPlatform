@@ -31,7 +31,7 @@ namespace BlackFinchLendingConsole
             var totalLoanValues = allApplicants.FindAll(x => x.IsSuccess == true).Select(x => x.LoanAmount).Sum();
 
             // Calculate average LTV foe all applications, regardless of whether they are a success
-            var averageLtv = allApplicants.Select(x => x.LoanToValue).Average();
+            var averageLtv = allApplicants.Count > 0 ? allApplicants.Select(x => x.LoanToValue).Average() : 0;
 
             Console.WriteLine("Blackfinch Lending Platform");
             Console.WriteLine();
