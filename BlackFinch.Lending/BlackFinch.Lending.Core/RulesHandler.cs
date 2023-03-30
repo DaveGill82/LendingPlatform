@@ -75,7 +75,7 @@
 
             if (loanAmount >= 1000000)
             {
-                if (loanToValue > 60 && creditScore < 950)
+                if (loanToValue > 60 || creditScore < 950)
                 {
                     ret = false;
                 }
@@ -105,8 +105,8 @@
 
             if (loanAmount < 1000000)
             {
-                if (loanToValue < 80 && creditScore < 800)
-                {
+                if (loanToValue >= 60 && loanToValue < 80 && creditScore < 800)
+                { 
                     ret = false;
                 }
             }
@@ -120,7 +120,7 @@
 
             if (loanAmount < 1000000)
             {
-                if (loanToValue < 90 && creditScore < 900)
+                if (loanToValue >= 80 && loanToValue < 90 && creditScore < 900)
                 {
                     ret = false;
                 }
